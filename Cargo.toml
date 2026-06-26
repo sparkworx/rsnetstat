@@ -2,6 +2,9 @@
 name = "rsnetstat"
 version = "0.1.0"
 edition = "2024"
+description = "High-fidelity, CIDR-complete alternative to macOS netstat -rn"
+license = "Apache-2.0"
+repository = "https://github.com/sparkworx/rsnetstat"
 
 [dependencies]
 clap = { version = "4.6.1", features = ["derive"] }
