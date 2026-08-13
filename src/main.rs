@@ -97,6 +97,16 @@ struct JsonRoute {
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+    // Rust ignores SIGPIPE by default, so writing to a closed pipe (e.g.
+    // `rsnetstat | head`) panics on the next `println!` instead of exiting
+    // quietly. Restore the default disposition so we die by SIGPIPE like any
+    // ordinary Unix filter.
+    // SAFETY: setting a signal disposition before spawning threads or doing any
+    // I/O is well-defined; we only reset SIGPIPE to its default handler.
+    unsafe {
+        libc::signal(libc::SIGPIPE, libc::SIG_DFL);
+    }
+
     let cli = Cli::parse();
 
     // With neither -4 nor -6, show both families (like `netstat -rn`).
