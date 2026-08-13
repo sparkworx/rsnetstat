@@ -7,11 +7,17 @@
 //! routing socket, `PF_ROUTE` / `sysctl(NET_RT_DUMP)`, which the `net-route`
 //! crate wraps for us) and prints every destination as an unambiguous CIDR.
 //!
+//! Each route also carries its kernel `rtm_flags` (the `Flags` column, e.g.
+//! `UGScg`), and the one unscoped default route per family — the route the
+//! kernel actually uses for ordinary traffic — is marked as the best default.
+//!
 //! Flags: `-4` / `-6` filter by family, `--sort` and `--reverse` order the
 //! output, and `--json` emits machine-readable JSON. See `--help`.
 
+mod flags;
+mod routing;
+
 use clap::{Parser, ValueEnum};
-use net_route::Handle;
 use serde::Serialize;
 use std::ffi::CStr;
 use std::net::{IpAddr, Ipv6Addr};
@@ -62,6 +68,8 @@ struct RouteEntry {
     ifindex: Option<u32>,
     /// Outgoing interface name, resolved once from `ifindex`.
     interface: Option<String>,
+    /// Kernel `rtm_flags` bitmask (see the `flags` module).
+    flags: u32,
 }
 
 /// JSON shape for `--json`. Keys are always present (absent values become
@@ -77,10 +85,18 @@ struct JsonRoute {
     interface: Option<String>,
     ifindex: Option<u32>,
     family: &'static str,
+    /// Raw `netstat`-style flag letters, e.g. `UGScg`.
+    flags: String,
+    /// The kernel `rtm_flags` bitmask, as a number.
+    flags_bits: u32,
+    /// Each set flag decoded to its letter, name, and meaning.
+    flags_decoded: Vec<flags::DecodedFlag>,
+    /// True for the single unscoped default route of this family — the one the
+    /// kernel uses for ordinary (non-scoped) traffic.
+    best_default: bool,
 }
 
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     let cli = Cli::parse();
 
     // With neither -4 nor -6, show both families (like `netstat -rn`).
@@ -89,10 +105,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         choice => choice,
     };
 
-    // `Handle::new()` opens a routing socket; `list()` dumps the whole table.
-    // Neither requires root — reading the routing table is unprivileged.
-    let handle = Handle::new()?;
-    let routes = handle.list().await?;
+    // Dump the whole routing table (both families), with flags. This reads the
+    // kernel table via sysctl and requires no privileges.
+    let routes = routing::route_table()?;
 
     // Partition by family so each table stays grouped, applying the filter.
     let mut v4: Vec<RouteEntry> = Vec::new();
@@ -104,6 +119,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             gateway: r.gateway,
             ifindex: r.ifindex,
             interface: r.ifindex.map(if_name),
+            flags: r.flags,
         };
         if entry.destination.is_ipv4() {
             if show_v4 {
@@ -226,6 +242,16 @@ impl RouteEntry {
         self.interface.as_deref().unwrap_or("-")
     }
 
+    /// Whether this is the family's *best* (primary) default route: a `/0` that
+    /// is up and not interface-scoped. macOS installs an IFSCOPE-tagged default
+    /// per uplink, but ordinary traffic follows the single unscoped one — the
+    /// same route `route -n get default` returns.
+    fn is_best_default(&self) -> bool {
+        self.prefix == 0
+            && self.flags & flags::RTF_UP != 0
+            && self.flags & flags::RTF_IFSCOPE == 0
+    }
+
     fn to_json(&self) -> JsonRoute {
         JsonRoute {
             destination: self.cidr(),
@@ -235,6 +261,10 @@ impl RouteEntry {
             interface: self.interface.clone(),
             ifindex: self.ifindex,
             family: self.family(),
+            flags: flags::letters(self.flags),
+            flags_bits: self.flags,
+            flags_decoded: flags::decode(self.flags),
+            best_default: self.is_best_default(),
         }
     }
 }
@@ -312,20 +342,43 @@ fn print_section(title: &str, rows: &[RouteEntry]) {
     // the same strings rather than recomputing them.
     let cidrs: Vec<String> = rows.iter().map(RouteEntry::cidr).collect();
     let gateways: Vec<String> = rows.iter().map(RouteEntry::gateway_cell).collect();
+    let flag_cells: Vec<String> = rows.iter().map(|r| flags::letters(r.flags)).collect();
 
     let dest_w = col_width(cidrs.iter().map(String::len), "Destination");
     let gw_w = col_width(gateways.iter().map(String::len), "Gateway");
+    let flags_w = col_width(flag_cells.iter().map(String::len), "Flags");
 
     println!("\n{title}");
-    println!("{:<dest_w$}  {:<gw_w$}  Interface", "Destination", "Gateway");
-    println!("{}", "-".repeat(dest_w + gw_w + "Interface".len() + 4));
-    for ((cidr, gateway), row) in cidrs.iter().zip(&gateways).zip(rows) {
+    println!(
+        "{:<dest_w$}  {:<gw_w$}  {:<flags_w$}  Interface",
+        "Destination", "Gateway", "Flags"
+    );
+    println!(
+        "{}",
+        "-".repeat(dest_w + gw_w + flags_w + "Interface".len() + 6)
+    );
+    let mut marked_default = false;
+    for (((cidr, gateway), flag_cell), row) in
+        cidrs.iter().zip(&gateways).zip(&flag_cells).zip(rows)
+    {
+        // Mark the family's primary default route inline; there is exactly one.
+        let note = if row.is_best_default() {
+            marked_default = true;
+            "  <- best default"
+        } else {
+            ""
+        };
         println!(
-            "{:<dest_w$}  {:<gw_w$}  {}",
+            "{:<dest_w$}  {:<gw_w$}  {:<flags_w$}  {}{}",
             cidr,
             gateway,
-            row.interface_cell()
+            flag_cell,
+            row.interface_cell(),
+            note,
         );
+    }
+    if marked_default {
+        println!("(best default: the up, unscoped route the kernel uses for non-scoped traffic)");
     }
 }
 

@@ -1,32 +1,33 @@
 {
   "src/main.rs": {
-    "mtime": 1782492052.5646198,
-    "seen": 1786638193.627647,
-    "ast_hash": "20320ba524af585d8452776f2ea7f804",
-    "semantic_hash": "20320ba524af585d8452776f2ea7f804"
+    "mtime": 1786639344.787351,
+    "ast_hash": "693eff684adf0d6df421367af73e3171",
+    "semantic_hash": ""
   },
   "CLAUDE.md": {
     "mtime": 1786637439.0067925,
-    "seen": 1786638193.627647,
     "ast_hash": "82efb97a359f5c7290bf2513d14686be",
     "semantic_hash": "82efb97a359f5c7290bf2513d14686be"
   },
   "README.md": {
-    "mtime": 1782492258.7097762,
-    "seen": 1786638193.627648,
-    "ast_hash": "35f509537c6e12b8e57294d2a5c3866e",
-    "semantic_hash": "35f509537c6e12b8e57294d2a5c3866e"
+    "mtime": 1786639383.4920197,
+    "ast_hash": "1a4a59a49f35cbb79a2459215a8816ab",
+    "semantic_hash": ""
   },
   ".claude/settings.json": {
     "mtime": 1786637624.1097317,
     "seen": 1786638193.6276438,
-    "ast_hash": "b9ad53db2f5865ae4f07af9ce41b744a",
-    "semantic_hash": "b9ad53db2f5865ae4f07af9ce41b744a"
+    "ast_hash": "",
+    "semantic_hash": ""
   },
-  "Cargo.toml": {
-    "mtime": 1782492774.5986269,
-    "seen": 1786638193.627646,
-    "ast_hash": "348093eb70cae19166453c86ab9de329",
-    "semantic_hash": "348093eb70cae19166453c86ab9de329"
+  "src/flags.rs": {
+    "mtime": 1786639131.556683,
+    "ast_hash": "1934d3d9b547585b826e0cbaa547489f",
+    "semantic_hash": ""
+  },
+  "src/routing.rs": {
+    "mtime": 1786639341.1929202,
+    "ast_hash": "4cc21eaa63622a734aeaa01eacc6ef78",
+    "semantic_hash": ""
   }
 }

@@ -16,11 +16,17 @@ reading entries like this and guessing at the real prefix:
 | `127`               | `127.0.0.0/8`      |
 
 `rsnetstat` reads the **same** kernel routing table — via the BSD routing
-socket (`PF_ROUTE` / `sysctl(NET_RT_DUMP)`, wrapped by the
-[`net-route`](https://crates.io/crates/net-route) crate) — and prints every
-destination as an unambiguous CIDR. It also resolves interface indices to
-names and restores the `%zone` suffix on link-local IPv6 addresses (the KAME
-convention macOS embeds in the address body).
+socket (`sysctl(NET_RT_DUMP)`) — and prints every destination as an
+unambiguous CIDR. It also resolves interface indices to names and restores the
+`%zone` suffix on link-local IPv6 addresses (the KAME convention macOS embeds
+in the address body).
+
+Each route carries its kernel `rtm_flags` in a `Flags` column, with the same
+single-letter mnemonics `netstat` uses (`U`p, `G`ateway, `H`ost, `S`tatic,
+IF`S`cope `I`, `g`lobal, …). macOS installs an interface-scoped (`I`) copy of
+the default route for every uplink; `rsnetstat` marks the one **up, unscoped**
+default per family — the route the kernel actually uses for ordinary traffic,
+the same one `route -n get default` returns — as the *best default*.
 
 ## Install
 
@@ -65,23 +71,25 @@ Default output — both families, sorted by destination:
 $ rsnetstat
 
 Internet (IPv4):
-Destination         Gateway         Interface
----------------------------------------------
-0.0.0.0/0           192.168.1.1     en0
-10.0.0.0/8          10.0.0.1        utun3
-127.0.0.0/8         link#1          lo0
-127.0.0.1/32        link#1          lo0
-192.168.1.0/24      link#11         en0
-192.168.1.42/32     link#11         en0
-224.0.0.0/4         link#11         en0
-255.255.255.255/32  link#11         en0
+Destination         Gateway         Flags   Interface
+-----------------------------------------------------
+0.0.0.0/0           192.168.1.1     UGScg   en0  <- best default
+0.0.0.0/0           192.168.1.1     UGScIg  en0
+10.0.0.0/8          10.0.0.1        UGSc    utun3
+127.0.0.0/8         link#1          UCS     lo0
+127.0.0.1/32        link#1          UH      lo0
+192.168.1.0/24      link#11         UCS     en0
+192.168.1.42/32     link#11         UHL     en0
+224.0.0.0/4         link#11         UmCS    en0
+255.255.255.255/32  link#11         UHLb    en0
+(best default: the up, unscoped route the kernel uses for non-scoped traffic)
 
 Internet6 (IPv6):
-Destination     Gateway  Interface
-----------------------------------
-::1/128         link#1   lo0
-fe80::%en0/64   link#11  en0
-ff00::/8        link#1   lo0
+Destination     Gateway  Flags  Interface
+-----------------------------------------
+::1/128         link#1   UHL    lo0
+fe80::%en0/64   link#11  UCI    en0
+ff00::/8        link#1   UmCI   lo0
 ```
 
 A directly-connected (on-link) route has no next-hop IP; its gateway is shown
@@ -105,18 +113,32 @@ $ rsnetstat -4 --json
     "gateway": "192.168.1.1",
     "interface": "en0",
     "ifindex": 11,
-    "family": "inet"
+    "family": "inet",
+    "flags": "UGScg",
+    "flags_bits": 1073809411,
+    "flags_decoded": [
+      { "letter": "U", "name": "UP", "description": "route usable" },
+      { "letter": "G", "name": "GATEWAY", "description": "destination is a gateway" },
+      { "letter": "S", "name": "STATIC", "description": "manually added" },
+      { "letter": "c", "name": "PRCLONING", "description": "protocol requires cloning" },
+      { "letter": "g", "name": "GLOBAL", "description": "route to destination of the global internet" }
+    ],
+    "best_default": true
   }
 ]
 ```
 
 JSON keys are always present (absent values become `null`), so consumers see a
 stable schema. The `type` field classifies each route as one of `default`,
-`unicast host`, `unicast network`, `multicast`, or `broadcast`.
+`unicast host`, `unicast network`, `multicast`, or `broadcast`. Route flags are
+exposed three ways: `flags` is the raw `netstat`-style letter string,
+`flags_bits` is the numeric `rtm_flags` bitmask, and `flags_decoded` names each
+set flag. `best_default` is `true` for the single up, unscoped default route of
+each family.
 
 ```sh
-# every interface carrying a default route
-rsnetstat --json | jq -r '.[] | select(.type == "default") | .interface'
+# the interface of each family's best (primary) default route
+rsnetstat --json | jq -r '.[] | select(.best_default) | .interface'
 ```
 
 ## Platform
