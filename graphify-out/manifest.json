@@ -1,7 +1,7 @@
 {
   "src/main.rs": {
-    "mtime": 1786639344.787351,
-    "ast_hash": "693eff684adf0d6df421367af73e3171",
+    "mtime": 1786640093.0775568,
+    "ast_hash": "97f81efaaab295945aa97ca9d1a9f177",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -16,8 +16,7 @@
   },
   ".claude/settings.json": {
     "mtime": 1786637624.1097317,
-    "seen": 1786638193.6276438,
-    "ast_hash": "",
+    "ast_hash": "b9ad53db2f5865ae4f07af9ce41b744a",
     "semantic_hash": ""
   },
   "src/flags.rs": {

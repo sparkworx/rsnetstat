@@ -21,37 +21,48 @@
   },
   "nodes": [
     {
+      "label": "DecodedFlag",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "decodedflag",
+      "community": 0,
+      "community_name": "RouteEntry",
+      "norm_label": "decodedflag"
+    },
+    {
+      "label": "IpAddr",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "ipaddr",
+      "community": 0,
+      "community_name": "RouteEntry",
+      "norm_label": "ipaddr"
+    },
+    {
+      "label": "Option",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "option",
+      "community": 0,
+      "community_name": "RouteEntry",
+      "norm_label": "option"
+    },
+    {
       "label": "fmt_addr()",
       "file_type": "code",
       "source_file": "src/main.rs",
-      "source_location": "L277",
+      "source_location": "L287",
       "_origin": "ast",
       "id": "src_main_fmt_addr",
       "community": 0,
       "community_name": "RouteEntry",
       "norm_label": "fmt_addr()"
-    },
-    {
-      "label": "gateway_sort_key()",
-      "file_type": "code",
-      "source_file": "src/main.rs",
-      "source_location": "L169",
-      "_origin": "ast",
-      "id": "src_main_gateway_sort_key",
-      "community": 0,
-      "community_name": "RouteEntry",
-      "norm_label": "gateway_sort_key()"
-    },
-    {
-      "label": "if_name()",
-      "file_type": "code",
-      "source_file": "src/main.rs",
-      "source_location": "L318",
-      "_origin": "ast",
-      "id": "src_main_if_name",
-      "community": 0,
-      "community_name": "RouteEntry",
-      "norm_label": "if_name()"
     },
     {
       "label": "JsonRoute",
@@ -63,6 +74,17 @@
       "community": 0,
       "community_name": "RouteEntry",
       "norm_label": "jsonroute"
+    },
+    {
+      "label": "print_section()",
+      "file_type": "code",
+      "source_file": "src/main.rs",
+      "source_location": "L346",
+      "_origin": "ast",
+      "id": "src_main_print_section",
+      "community": 0,
+      "community_name": "RouteEntry",
+      "norm_label": "print_section()"
     },
     {
       "label": "RouteEntry",
@@ -79,7 +101,7 @@
       "label": ".cidr()",
       "file_type": "code",
       "source_file": "src/main.rs",
-      "source_location": "L219",
+      "source_location": "L229",
       "_origin": "ast",
       "id": "src_main_routeentry_cidr",
       "community": 0,
@@ -90,7 +112,7 @@
       "label": ".family()",
       "file_type": "code",
       "source_file": "src/main.rs",
-      "source_location": "L177",
+      "source_location": "L187",
       "_origin": "ast",
       "id": "src_main_routeentry_family",
       "community": 0,
@@ -101,7 +123,7 @@
       "label": ".gateway_addr()",
       "file_type": "code",
       "source_file": "src/main.rs",
-      "source_location": "L224",
+      "source_location": "L234",
       "_origin": "ast",
       "id": "src_main_routeentry_gateway_addr",
       "community": 0,
@@ -112,7 +134,7 @@
       "label": ".gateway_cell()",
       "file_type": "code",
       "source_file": "src/main.rs",
-      "source_location": "L231",
+      "source_location": "L241",
       "_origin": "ast",
       "id": "src_main_routeentry_gateway_cell",
       "community": 0,
@@ -123,7 +145,7 @@
       "label": ".interface_cell()",
       "file_type": "code",
       "source_file": "src/main.rs",
-      "source_location": "L241",
+      "source_location": "L251",
       "_origin": "ast",
       "id": "src_main_routeentry_interface_cell",
       "community": 0,
@@ -131,10 +153,21 @@
       "norm_label": ".interface_cell()"
     },
     {
+      "label": ".is_best_default()",
+      "file_type": "code",
+      "source_file": "src/main.rs",
+      "source_location": "L259",
+      "_origin": "ast",
+      "id": "src_main_routeentry_is_best_default",
+      "community": 0,
+      "community_name": "RouteEntry",
+      "norm_label": ".is_best_default()"
+    },
+    {
       "label": ".route_type()",
       "file_type": "code",
       "source_file": "src/main.rs",
-      "source_location": "L190",
+      "source_location": "L200",
       "_origin": "ast",
       "id": "src_main_routeentry_route_type",
       "community": 0,
@@ -145,7 +178,7 @@
       "label": ".to_json()",
       "file_type": "code",
       "source_file": "src/main.rs",
-      "source_location": "L255",
+      "source_location": "L265",
       "_origin": "ast",
       "id": "src_main_routeentry_to_json",
       "community": 0,
@@ -153,34 +186,12 @@
       "norm_label": ".to_json()"
     },
     {
-      "label": "IpAddr",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "src_main_rs_ipaddr",
-      "community": 0,
-      "community_name": "RouteEntry",
-      "norm_label": "ipaddr"
-    },
-    {
-      "label": "Option",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "src_main_rs_option",
-      "community": 0,
-      "community_name": "RouteEntry",
-      "norm_label": "option"
-    },
-    {
       "label": "String",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "src_main_rs_string",
+      "id": "string",
       "community": 0,
       "community_name": "RouteEntry",
       "norm_label": "string"
@@ -191,10 +202,21 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "src_main_rs_vec",
+      "id": "vec",
       "community": 0,
       "community_name": "RouteEntry",
       "norm_label": "vec"
+    },
+    {
+      "label": "Vec",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Vec",
+      "norm_label": "vec",
+      "id": "src_main_rs_vec"
     },
     {
       "label": "rsnetstat",
@@ -216,10 +238,10 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "rt_msghdr",
       "community": 2,
       "community_name": "routing.rs",
-      "norm_label": "rt_msghdr"
+      "norm_label": "rt_msghdr",
+      "id": "rt_msghdr"
     },
     {
       "label": "sockaddr",
@@ -227,10 +249,10 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "sockaddr",
       "community": 2,
       "community_name": "routing.rs",
-      "norm_label": "sockaddr"
+      "norm_label": "sockaddr",
+      "id": "sockaddr"
     },
     {
       "label": "routing.rs",
@@ -238,10 +260,10 @@
       "source_file": "src/routing.rs",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_routing",
       "community": 2,
       "community_name": "routing.rs",
-      "norm_label": "routing.rs"
+      "norm_label": "routing.rs",
+      "id": "src_routing"
     },
     {
       "label": "dump_table()",
@@ -249,10 +271,10 @@
       "source_file": "src/routing.rs",
       "source_location": "L186",
       "_origin": "ast",
-      "id": "src_routing_dump_table",
       "community": 2,
       "community_name": "routing.rs",
-      "norm_label": "dump_table()"
+      "norm_label": "dump_table()",
+      "id": "src_routing_dump_table"
     },
     {
       "label": "mask_to_prefix()",
@@ -260,10 +282,10 @@
       "source_file": "src/routing.rs",
       "source_location": "L156",
       "_origin": "ast",
-      "id": "src_routing_mask_to_prefix",
       "community": 2,
       "community_name": "routing.rs",
-      "norm_label": "mask_to_prefix()"
+      "norm_label": "mask_to_prefix()",
+      "id": "src_routing_mask_to_prefix"
     },
     {
       "label": "message_to_route()",
@@ -271,10 +293,10 @@
       "source_file": "src/routing.rs",
       "source_location": "L81",
       "_origin": "ast",
-      "id": "src_routing_message_to_route",
       "community": 2,
       "community_name": "routing.rs",
-      "norm_label": "message_to_route()"
+      "norm_label": "message_to_route()",
+      "id": "src_routing_message_to_route"
     },
     {
       "label": "RawRoute",
@@ -282,10 +304,10 @@
       "source_file": "src/routing.rs",
       "source_location": "L33",
       "_origin": "ast",
-      "id": "src_routing_rawroute",
       "community": 2,
       "community_name": "routing.rs",
-      "norm_label": "rawroute"
+      "norm_label": "rawroute",
+      "id": "src_routing_rawroute"
     },
     {
       "label": "route_table()",
@@ -293,10 +315,10 @@
       "source_file": "src/routing.rs",
       "source_location": "L43",
       "_origin": "ast",
-      "id": "src_routing_route_table",
       "community": 2,
       "community_name": "routing.rs",
-      "norm_label": "route_table()"
+      "norm_label": "route_table()",
+      "id": "src_routing_route_table"
     },
     {
       "label": "IpAddr",
@@ -304,10 +326,10 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "src_routing_rs_ipaddr",
       "community": 2,
       "community_name": "routing.rs",
-      "norm_label": "ipaddr"
+      "norm_label": "ipaddr",
+      "id": "src_routing_rs_ipaddr"
     },
     {
       "label": "Option",
@@ -315,10 +337,10 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "src_routing_rs_option",
       "community": 2,
       "community_name": "routing.rs",
-      "norm_label": "option"
+      "norm_label": "option",
+      "id": "src_routing_rs_option"
     },
     {
       "label": "Result",
@@ -326,10 +348,10 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "src_routing_rs_result",
       "community": 2,
       "community_name": "routing.rs",
-      "norm_label": "result"
+      "norm_label": "result",
+      "id": "src_routing_rs_result"
     },
     {
       "label": "Vec",
@@ -337,10 +359,10 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "src_routing_rs_vec",
       "community": 2,
       "community_name": "routing.rs",
-      "norm_label": "vec"
+      "norm_label": "vec",
+      "id": "src_routing_rs_vec"
     },
     {
       "label": "sa_to_ip()",
@@ -348,10 +370,10 @@
       "source_file": "src/routing.rs",
       "source_location": "L139",
       "_origin": "ast",
-      "id": "src_routing_sa_to_ip",
       "community": 2,
       "community_name": "routing.rs",
-      "norm_label": "sa_to_ip()"
+      "norm_label": "sa_to_ip()",
+      "id": "src_routing_sa_to_ip"
     },
     {
       "label": "strip_gateway_zone()",
@@ -359,10 +381,10 @@
       "source_file": "src/routing.rs",
       "source_location": "L169",
       "_origin": "ast",
-      "id": "src_routing_strip_gateway_zone",
       "community": 2,
       "community_name": "routing.rs",
-      "norm_label": "strip_gateway_zone()"
+      "norm_label": "strip_gateway_zone()",
+      "id": "src_routing_strip_gateway_zone"
     },
     {
       "label": "flags.rs",
@@ -370,10 +392,10 @@
       "source_file": "src/flags.rs",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_flags",
       "community": 3,
       "community_name": "flags.rs",
-      "norm_label": "flags.rs"
+      "norm_label": "flags.rs",
+      "id": "src_flags"
     },
     {
       "label": "decode()",
@@ -381,10 +403,10 @@
       "source_file": "src/flags.rs",
       "source_location": "L82",
       "_origin": "ast",
-      "id": "src_flags_decode",
       "community": 3,
       "community_name": "flags.rs",
-      "norm_label": "decode()"
+      "norm_label": "decode()",
+      "id": "src_flags_decode"
     },
     {
       "label": "DecodedFlag",
@@ -392,10 +414,10 @@
       "source_file": "src/flags.rs",
       "source_location": "L75",
       "_origin": "ast",
-      "id": "src_flags_decodedflag",
       "community": 3,
       "community_name": "flags.rs",
-      "norm_label": "decodedflag"
+      "norm_label": "decodedflag",
+      "id": "src_flags_decodedflag"
     },
     {
       "label": "FlagDef",
@@ -403,10 +425,10 @@
       "source_file": "src/flags.rs",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "src_flags_flagdef",
       "community": 3,
       "community_name": "flags.rs",
-      "norm_label": "flagdef"
+      "norm_label": "flagdef",
+      "id": "src_flags_flagdef"
     },
     {
       "label": "letters()",
@@ -414,10 +436,10 @@
       "source_file": "src/flags.rs",
       "source_location": "L64",
       "_origin": "ast",
-      "id": "src_flags_letters",
       "community": 3,
       "community_name": "flags.rs",
-      "norm_label": "letters()"
+      "norm_label": "letters()",
+      "id": "src_flags_letters"
     },
     {
       "label": "String",
@@ -425,10 +447,10 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "src_flags_rs_string",
       "community": 3,
       "community_name": "flags.rs",
-      "norm_label": "string"
+      "norm_label": "string",
+      "id": "src_flags_rs_string"
     },
     {
       "label": "Vec",
@@ -436,10 +458,10 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "src_flags_rs_vec",
       "community": 3,
       "community_name": "flags.rs",
-      "norm_label": "vec"
+      "norm_label": "vec",
+      "id": "src_flags_rs_vec"
     },
     {
       "label": "Box",
@@ -475,26 +497,15 @@
       "norm_label": "ipv6addr"
     },
     {
-      "label": "Item",
+      "label": "Result",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "item",
+      "id": "result",
       "community": 4,
       "community_name": "main.rs",
-      "norm_label": "item"
-    },
-    {
-      "label": "Iterator",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "iterator",
-      "community": 4,
-      "community_name": "main.rs",
-      "norm_label": "iterator"
+      "norm_label": "result"
     },
     {
       "label": "main.rs",
@@ -519,21 +530,32 @@
       "norm_label": "cli"
     },
     {
-      "label": "col_width()",
+      "label": "gateway_sort_key()",
       "file_type": "code",
       "source_file": "src/main.rs",
-      "source_location": "L386",
+      "source_location": "L179",
       "_origin": "ast",
-      "id": "src_main_col_width",
+      "id": "src_main_gateway_sort_key",
       "community": 4,
       "community_name": "main.rs",
-      "norm_label": "col_width()"
+      "norm_label": "gateway_sort_key()"
+    },
+    {
+      "label": "if_name()",
+      "file_type": "code",
+      "source_file": "src/main.rs",
+      "source_location": "L328",
+      "_origin": "ast",
+      "id": "src_main_if_name",
+      "community": 4,
+      "community_name": "main.rs",
+      "norm_label": "if_name()"
     },
     {
       "label": "is_zone_scoped()",
       "file_type": "code",
       "source_file": "src/main.rs",
-      "source_location": "L307",
+      "source_location": "L317",
       "_origin": "ast",
       "id": "src_main_is_zone_scoped",
       "community": 4,
@@ -552,43 +574,10 @@
       "norm_label": "main()"
     },
     {
-      "label": "print_section()",
-      "file_type": "code",
-      "source_file": "src/main.rs",
-      "source_location": "L336",
-      "_origin": "ast",
-      "id": "src_main_print_section",
-      "community": 4,
-      "community_name": "main.rs",
-      "norm_label": "print_section()"
-    },
-    {
-      "label": ".is_best_default()",
-      "file_type": "code",
-      "source_file": "src/main.rs",
-      "source_location": "L249",
-      "_origin": "ast",
-      "id": "src_main_routeentry_is_best_default",
-      "community": 4,
-      "community_name": "main.rs",
-      "norm_label": ".is_best_default()"
-    },
-    {
-      "label": "Result",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "src_main_rs_result",
-      "community": 4,
-      "community_name": "main.rs",
-      "norm_label": "result"
-    },
-    {
       "label": "sort_entries()",
       "file_type": "code",
       "source_file": "src/main.rs",
-      "source_location": "L149",
+      "source_location": "L159",
       "_origin": "ast",
       "id": "src_main_sort_entries",
       "community": 4,
@@ -605,6 +594,83 @@
       "community": 4,
       "community_name": "main.rs",
       "norm_label": "sortkey"
+    },
+    {
+      "label": "Item",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "item",
+      "community": 5,
+      "community_name": "col_width",
+      "norm_label": "item"
+    },
+    {
+      "label": "Iterator",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "iterator",
+      "community": 5,
+      "community_name": "col_width",
+      "norm_label": "iterator"
+    },
+    {
+      "label": "col_width()",
+      "file_type": "code",
+      "source_file": "src/main.rs",
+      "source_location": "L396",
+      "_origin": "ast",
+      "id": "src_main_col_width",
+      "community": 5,
+      "community_name": "col_width",
+      "norm_label": "col_width()"
+    },
+    {
+      "label": "IpAddr",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "IpAddr",
+      "norm_label": "ipaddr",
+      "id": "src_main_rs_ipaddr"
+    },
+    {
+      "label": "Option",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "Option",
+      "norm_label": "option",
+      "id": "src_main_rs_option"
+    },
+    {
+      "label": "Result",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "Result",
+      "norm_label": "result",
+      "id": "src_main_rs_result"
+    },
+    {
+      "label": "String",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "String",
+      "norm_label": "string",
+      "id": "src_main_rs_string"
     },
     {
       "label": "BSD routing socket (PF_ROUTE / sysctl NET_RT_DUMP)",
@@ -808,7 +874,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L281",
+      "source_location": "L291",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_fmt_addr",
@@ -820,7 +886,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L133",
+      "source_location": "L143",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_main",
@@ -832,7 +898,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L140",
+      "source_location": "L150",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_main",
@@ -844,7 +910,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L347",
+      "source_location": "L357",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_print_section",
@@ -856,7 +922,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L365",
+      "source_location": "L375",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_print_section",
@@ -868,7 +934,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L225",
+      "source_location": "L235",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_routeentry_gateway_addr",
@@ -880,7 +946,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L232",
+      "source_location": "L242",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_routeentry_gateway_cell",
@@ -892,7 +958,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L257",
+      "source_location": "L267",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_routeentry_to_json",
@@ -904,7 +970,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L259",
+      "source_location": "L269",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_routeentry_to_json",
@@ -916,7 +982,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L260",
+      "source_location": "L270",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_routeentry_to_json",
@@ -928,7 +994,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L263",
+      "source_location": "L273",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_routeentry_to_json",
@@ -940,7 +1006,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L267",
+      "source_location": "L277",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_routeentry_to_json",
@@ -952,7 +1018,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L154",
+      "source_location": "L164",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_sort_entries",
@@ -967,9 +1033,9 @@
       "source_location": "L104",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing_message_to_route",
-      "target": "src_routing_sa_to_ip",
-      "confidence_score": 1.0
+      "target": "src_routing_sa_to_ip"
     },
     {
       "relation": "calls",
@@ -979,9 +1045,9 @@
       "source_location": "L124",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing_message_to_route",
-      "target": "src_routing_mask_to_prefix",
-      "confidence_score": 1.0
+      "target": "src_routing_mask_to_prefix"
     },
     {
       "relation": "calls",
@@ -991,9 +1057,9 @@
       "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing_route_table",
-      "target": "src_routing_dump_table",
-      "confidence_score": 1.0
+      "target": "src_routing_dump_table"
     },
     {
       "relation": "calls",
@@ -1003,9 +1069,9 @@
       "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing_route_table",
-      "target": "src_routing_message_to_route",
-      "confidence_score": 1.0
+      "target": "src_routing_message_to_route"
     },
     {
       "relation": "references",
@@ -1028,7 +1094,7 @@
       "context": "field",
       "_origin": "ast",
       "source": "src_main_jsonroute",
-      "target": "src_main_rs_option",
+      "target": "option",
       "confidence_score": 1.0
     },
     {
@@ -1040,7 +1106,7 @@
       "context": "field",
       "_origin": "ast",
       "source": "src_main_jsonroute",
-      "target": "src_main_rs_string",
+      "target": "string",
       "confidence_score": 1.0
     },
     {
@@ -1052,7 +1118,7 @@
       "context": "field",
       "_origin": "ast",
       "source": "src_main_jsonroute",
-      "target": "src_main_rs_vec",
+      "target": "vec",
       "confidence_score": 1.0
     },
     {
@@ -1064,7 +1130,7 @@
       "context": "field",
       "_origin": "ast",
       "source": "src_main_routeentry",
-      "target": "src_main_rs_option",
+      "target": "option",
       "confidence_score": 1.0
     },
     {
@@ -1075,9 +1141,9 @@
       "weight": 1.0,
       "context": "field",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing_rawroute",
-      "target": "src_routing_rs_option",
-      "confidence_score": 1.0
+      "target": "src_routing_rs_option"
     },
     {
       "relation": "references",
@@ -1087,15 +1153,15 @@
       "weight": 1.0,
       "context": "generic_arg",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_flags_decode",
-      "target": "src_flags_decodedflag",
-      "confidence_score": 1.0
+      "target": "src_flags_decodedflag"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L386",
+      "source_location": "L396",
       "weight": 1.0,
       "context": "generic_arg",
       "_origin": "ast",
@@ -1107,12 +1173,12 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L169",
+      "source_location": "L179",
       "weight": 1.0,
       "context": "generic_arg",
       "_origin": "ast",
       "source": "src_main_gateway_sort_key",
-      "target": "src_main_rs_ipaddr",
+      "target": "ipaddr",
       "confidence_score": 1.0
     },
     {
@@ -1124,7 +1190,7 @@
       "context": "generic_arg",
       "_origin": "ast",
       "source": "src_main_jsonroute",
-      "target": "src_flags_decodedflag",
+      "target": "decodedflag",
       "confidence_score": 1.0
     },
     {
@@ -1160,7 +1226,7 @@
       "context": "generic_arg",
       "_origin": "ast",
       "source": "src_main_routeentry",
-      "target": "src_main_rs_ipaddr",
+      "target": "ipaddr",
       "confidence_score": 1.0
     },
     {
@@ -1172,19 +1238,19 @@
       "context": "generic_arg",
       "_origin": "ast",
       "source": "src_main_routeentry",
-      "target": "src_main_rs_string",
+      "target": "string",
       "confidence_score": 1.0
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L224",
+      "source_location": "L234",
       "weight": 1.0,
       "context": "generic_arg",
       "_origin": "ast",
       "source": "src_main_routeentry_gateway_addr",
-      "target": "src_main_rs_string",
+      "target": "string",
       "confidence_score": 1.0
     },
     {
@@ -1195,9 +1261,9 @@
       "weight": 1.0,
       "context": "generic_arg",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing_dump_table",
-      "target": "src_routing_rs_vec",
-      "confidence_score": 1.0
+      "target": "src_routing_rs_vec"
     },
     {
       "relation": "references",
@@ -1207,9 +1273,9 @@
       "weight": 1.0,
       "context": "generic_arg",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing_message_to_route",
-      "target": "src_routing_rawroute",
-      "confidence_score": 1.0
+      "target": "src_routing_rawroute"
     },
     {
       "relation": "references",
@@ -1219,9 +1285,9 @@
       "weight": 1.0,
       "context": "generic_arg",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing_rawroute",
-      "target": "src_routing_rs_ipaddr",
-      "confidence_score": 1.0
+      "target": "src_routing_rs_ipaddr"
     },
     {
       "relation": "references",
@@ -1231,9 +1297,9 @@
       "weight": 1.0,
       "context": "generic_arg",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing_route_table",
-      "target": "src_routing_rawroute",
-      "confidence_score": 1.0
+      "target": "src_routing_rawroute"
     },
     {
       "relation": "references",
@@ -1243,9 +1309,9 @@
       "weight": 1.0,
       "context": "generic_arg",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing_route_table",
-      "target": "src_routing_rs_vec",
-      "confidence_score": 1.0
+      "target": "src_routing_rs_vec"
     },
     {
       "relation": "references",
@@ -1255,15 +1321,15 @@
       "weight": 1.0,
       "context": "generic_arg",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing_sa_to_ip",
-      "target": "src_routing_rs_ipaddr",
-      "confidence_score": 1.0
+      "target": "src_routing_rs_ipaddr"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L386",
+      "source_location": "L396",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -1275,31 +1341,31 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L277",
+      "source_location": "L287",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
       "source": "src_main_fmt_addr",
-      "target": "src_main_rs_ipaddr",
+      "target": "ipaddr",
       "confidence_score": 1.0
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L277",
+      "source_location": "L287",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
       "source": "src_main_fmt_addr",
-      "target": "src_main_rs_option",
+      "target": "option",
       "confidence_score": 1.0
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L169",
+      "source_location": "L179",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -1311,7 +1377,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L307",
+      "source_location": "L317",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -1323,7 +1389,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L336",
+      "source_location": "L346",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -1335,7 +1401,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L149",
+      "source_location": "L159",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -1347,7 +1413,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L149",
+      "source_location": "L159",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -1363,9 +1429,9 @@
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing_mask_to_prefix",
-      "target": "sockaddr",
-      "confidence_score": 1.0
+      "target": "sockaddr"
     },
     {
       "relation": "references",
@@ -1375,9 +1441,9 @@
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing_message_to_route",
-      "target": "rt_msghdr",
-      "confidence_score": 1.0
+      "target": "rt_msghdr"
     },
     {
       "relation": "references",
@@ -1387,9 +1453,9 @@
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing_sa_to_ip",
-      "target": "sockaddr",
-      "confidence_score": 1.0
+      "target": "sockaddr"
     },
     {
       "relation": "references",
@@ -1399,9 +1465,9 @@
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_flags_decode",
-      "target": "src_flags_rs_vec",
-      "confidence_score": 1.0
+      "target": "src_flags_rs_vec"
     },
     {
       "relation": "references",
@@ -1411,44 +1477,44 @@
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_flags_letters",
-      "target": "src_flags_rs_string",
-      "confidence_score": 1.0
+      "target": "src_flags_rs_string"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L277",
+      "source_location": "L287",
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
       "source": "src_main_fmt_addr",
-      "target": "src_main_rs_string",
+      "target": "string",
       "confidence_score": 1.0
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L169",
+      "source_location": "L179",
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
       "source": "src_main_gateway_sort_key",
-      "target": "src_main_rs_option",
+      "target": "option",
       "confidence_score": 1.0
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L318",
+      "source_location": "L328",
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
       "source": "src_main_if_name",
-      "target": "src_main_rs_string",
+      "target": "string",
       "confidence_score": 1.0
     },
     {
@@ -1460,50 +1526,50 @@
       "context": "return_type",
       "_origin": "ast",
       "source": "src_main_main",
-      "target": "src_main_rs_result",
+      "target": "result",
       "confidence_score": 1.0
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L219",
+      "source_location": "L229",
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
       "source": "src_main_routeentry_cidr",
-      "target": "src_main_rs_string",
+      "target": "string",
       "confidence_score": 1.0
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L224",
+      "source_location": "L234",
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
       "source": "src_main_routeentry_gateway_addr",
-      "target": "src_main_rs_option",
+      "target": "option",
       "confidence_score": 1.0
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L231",
+      "source_location": "L241",
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
       "source": "src_main_routeentry_gateway_cell",
-      "target": "src_main_rs_string",
+      "target": "string",
       "confidence_score": 1.0
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L255",
+      "source_location": "L265",
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
@@ -1519,9 +1585,9 @@
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing_dump_table",
-      "target": "src_routing_rs_result",
-      "confidence_score": 1.0
+      "target": "src_routing_rs_result"
     },
     {
       "relation": "references",
@@ -1531,9 +1597,9 @@
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing_message_to_route",
-      "target": "src_routing_rs_option",
-      "confidence_score": 1.0
+      "target": "src_routing_rs_option"
     },
     {
       "relation": "references",
@@ -1543,9 +1609,9 @@
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing_route_table",
-      "target": "src_routing_rs_result",
-      "confidence_score": 1.0
+      "target": "src_routing_rs_result"
     },
     {
       "relation": "references",
@@ -1555,9 +1621,9 @@
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing_sa_to_ip",
-      "target": "src_routing_rs_option",
-      "confidence_score": 1.0
+      "target": "src_routing_rs_option"
     },
     {
       "relation": "references",
@@ -1567,9 +1633,9 @@
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing_strip_gateway_zone",
-      "target": "src_routing_rs_ipaddr",
-      "confidence_score": 1.0
+      "target": "src_routing_rs_ipaddr"
     },
     {
       "relation": "contains",
@@ -1578,9 +1644,9 @@
       "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_flags",
-      "target": "src_flags_flagdef",
-      "confidence_score": 1.0
+      "target": "src_flags_flagdef"
     },
     {
       "relation": "contains",
@@ -1589,9 +1655,9 @@
       "source_location": "L64",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_flags",
-      "target": "src_flags_letters",
-      "confidence_score": 1.0
+      "target": "src_flags_letters"
     },
     {
       "relation": "contains",
@@ -1600,9 +1666,9 @@
       "source_location": "L75",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_flags",
-      "target": "src_flags_decodedflag",
-      "confidence_score": 1.0
+      "target": "src_flags_decodedflag"
     },
     {
       "relation": "contains",
@@ -1611,15 +1677,15 @@
       "source_location": "L82",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_flags",
-      "target": "src_flags_decode",
-      "confidence_score": 1.0
+      "target": "src_flags_decode"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L149",
+      "source_location": "L159",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main",
@@ -1630,22 +1696,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L169",
+      "source_location": "L179",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main",
       "target": "src_main_gateway_sort_key",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/main.rs",
-      "source_location": "L277",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_main",
-      "target": "src_main_fmt_addr",
       "confidence_score": 1.0
     },
     {
@@ -1663,7 +1718,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L307",
+      "source_location": "L287",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_main",
+      "target": "src_main_fmt_addr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.rs",
+      "source_location": "L317",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main",
@@ -1674,7 +1740,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L318",
+      "source_location": "L328",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main",
@@ -1685,7 +1751,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L336",
+      "source_location": "L346",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main",
@@ -1696,7 +1762,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L386",
+      "source_location": "L396",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main",
@@ -1754,9 +1820,9 @@
       "source_location": "L139",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing",
-      "target": "src_routing_sa_to_ip",
-      "confidence_score": 1.0
+      "target": "src_routing_sa_to_ip"
     },
     {
       "relation": "contains",
@@ -1765,9 +1831,9 @@
       "source_location": "L156",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing",
-      "target": "src_routing_mask_to_prefix",
-      "confidence_score": 1.0
+      "target": "src_routing_mask_to_prefix"
     },
     {
       "relation": "contains",
@@ -1776,9 +1842,9 @@
       "source_location": "L169",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing",
-      "target": "src_routing_strip_gateway_zone",
-      "confidence_score": 1.0
+      "target": "src_routing_strip_gateway_zone"
     },
     {
       "relation": "contains",
@@ -1787,9 +1853,9 @@
       "source_location": "L186",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing",
-      "target": "src_routing_dump_table",
-      "confidence_score": 1.0
+      "target": "src_routing_dump_table"
     },
     {
       "relation": "contains",
@@ -1798,9 +1864,9 @@
       "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing",
-      "target": "src_routing_rawroute",
-      "confidence_score": 1.0
+      "target": "src_routing_rawroute"
     },
     {
       "relation": "contains",
@@ -1809,9 +1875,9 @@
       "source_location": "L43",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing",
-      "target": "src_routing_route_table",
-      "confidence_score": 1.0
+      "target": "src_routing_route_table"
     },
     {
       "relation": "contains",
@@ -1820,15 +1886,15 @@
       "source_location": "L81",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "src_routing",
-      "target": "src_routing_message_to_route",
-      "confidence_score": 1.0
+      "target": "src_routing_message_to_route"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L177",
+      "source_location": "L187",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_routeentry",
@@ -1839,7 +1905,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L190",
+      "source_location": "L200",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_routeentry",
@@ -1850,7 +1916,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L219",
+      "source_location": "L229",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_routeentry",
@@ -1861,7 +1927,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L224",
+      "source_location": "L234",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_routeentry",
@@ -1872,7 +1938,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L231",
+      "source_location": "L241",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_routeentry",
@@ -1883,7 +1949,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L241",
+      "source_location": "L251",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_routeentry",
@@ -1894,7 +1960,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L249",
+      "source_location": "L259",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_routeentry",
@@ -1905,7 +1971,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L255",
+      "source_location": "L265",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main_routeentry",
@@ -2094,5 +2160,5 @@
       "source_file": "README.md"
     }
   ],
-  "built_at_commit": "de78403af3674f810da0429b562d9281198c26c5"
+  "built_at_commit": "649678466f1085b814e44397cd4f076e879c4591"
 }

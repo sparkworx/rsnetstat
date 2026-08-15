@@ -1,16 +1,16 @@
 # Graph Report - rsnetstat  (2026-08-13)
 
 ## Corpus Check
-- 6 files · ~4,277 words
+- 6 files · ~4,348 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 66 nodes · 110 edges · 7 communities (5 shown, 2 thin omitted)
+- 72 nodes · 110 edges · 13 communities (6 shown, 7 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.75)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `de78403a`
+- Built from commit: `64967846`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -20,6 +20,12 @@
 - routing.rs
 - flags.rs
 - main.rs
+- col_width
+- IpAddr
+- Option
+- Result
+- String
+- Vec
 - graphify knowledge graph workflow
 - rsnetstat
 
@@ -36,8 +42,10 @@
 10. `print_section()` - 5 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `JsonRoute` --references--> `DecodedFlag`  [EXTRACTED]
-  src/main.rs → src/flags.rs
+- `gateway_sort_key()` --references--> `RouteEntry`  [EXTRACTED]
+  src/main.rs → src/main.rs  _Bridges community 0 → community 4_
+- `print_section()` --calls--> `col_width()`  [EXTRACTED]
+  src/main.rs → src/main.rs  _Bridges community 0 → community 5_
 
 ## Import Cycles
 - None detected.
@@ -45,11 +53,11 @@
 ## Hyperedges (group relationships)
 - **Routing table ingestion via BSD socket** — readme_rsnetstat, readme_bsd_routing_socket, readme_net_route_crate, readme_kernel_routing_table [EXTRACTED 0.85]
 
-## Communities (7 total, 2 thin omitted)
+## Communities (13 total, 7 thin omitted)
 
 ### Community 0 - "RouteEntry"
-Cohesion: 0.26
-Nodes (9): fmt_addr(), gateway_sort_key(), if_name(), JsonRoute, RouteEntry, IpAddr, Option, String (+1 more)
+Cohesion: 0.24
+Nodes (9): DecodedFlag, IpAddr, Option, fmt_addr(), JsonRoute, print_section(), RouteEntry, String (+1 more)
 
 ### Community 1 - "rsnetstat"
 Cohesion: 0.23
@@ -64,22 +72,26 @@ Cohesion: 0.33
 Nodes (6): decode(), DecodedFlag, FlagDef, letters(), String, Vec
 
 ### Community 4 - "main.rs"
-Cohesion: 0.18
-Nodes (13): Box, Error, Ipv6Addr, Item, Iterator, Cli, col_width(), is_zone_scoped() (+5 more)
+Cohesion: 0.23
+Nodes (11): Box, Error, Ipv6Addr, Result, Cli, gateway_sort_key(), if_name(), is_zone_scoped() (+3 more)
+
+### Community 5 - "col_width"
+Cohesion: 0.67
+Nodes (3): Item, Iterator, col_width()
 
 ## Knowledge Gaps
-- **6 isolated node(s):** `FlagDef`, `rsnetstat`, `Sort and reverse options`, `Route type classification`, `graphify knowledge graph workflow` (+1 more)
+- **6 isolated node(s):** `rsnetstat`, `FlagDef`, `net-route crate`, `Route type classification`, `Sort and reverse options` (+1 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `JsonRoute` connect `RouteEntry` to `flags.rs`, `main.rs`?**
-  _High betweenness centrality (0.119) - this node is a cross-community bridge._
-- **Why does `DecodedFlag` connect `flags.rs` to `RouteEntry`?**
-  _High betweenness centrality (0.089) - this node is a cross-community bridge._
 - **Why does `RouteEntry` connect `RouteEntry` to `main.rs`?**
-  _High betweenness centrality (0.082) - this node is a cross-community bridge._
-- **What connects `FlagDef`, `rsnetstat`, `Sort and reverse options` to the rest of the system?**
+  _High betweenness centrality (0.065) - this node is a cross-community bridge._
+- **Why does `main()` connect `main.rs` to `RouteEntry`?**
+  _High betweenness centrality (0.035) - this node is a cross-community bridge._
+- **Why does `JsonRoute` connect `RouteEntry` to `main.rs`?**
+  _High betweenness centrality (0.027) - this node is a cross-community bridge._
+- **What connects `rsnetstat`, `FlagDef`, `net-route crate` to the rest of the system?**
   _6 weakly-connected nodes found - possible documentation gaps or missing edges._
