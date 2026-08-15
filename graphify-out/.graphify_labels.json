@@ -4,7 +4,7 @@
   "2": "routing.rs",
   "3": "flags.rs",
   "4": "main.rs",
-  "5": "col_width",
+  "5": "DecodedFlag",
   "6": "IpAddr",
   "7": "Option",
   "8": "Result",

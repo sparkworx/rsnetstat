@@ -1,7 +1,7 @@
 {
   "src/main.rs": {
-    "mtime": 1786828916.2996314,
-    "ast_hash": "d392fef5ec2ce03ff7ee996974ab2a26",
+    "mtime": 1786829106.1689034,
+    "ast_hash": "1e7a0e3854ab3fb0d8a09961d9d10e40",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -10,8 +10,8 @@
     "semantic_hash": "82efb97a359f5c7290bf2513d14686be"
   },
   "README.md": {
-    "mtime": 1786828937.3931456,
-    "ast_hash": "25ea6a037a2e0145a2f861ce360c3d77",
+    "mtime": 1786829142.8874724,
+    "ast_hash": "f12a72b8d79bc39c70c77dafea6d6862",
     "semantic_hash": ""
   },
   ".claude/settings.json": {
@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "src/flags.rs": {
-    "mtime": 1786639131.556683,
-    "ast_hash": "1934d3d9b547585b826e0cbaa547489f",
+    "mtime": 1786829099.6560218,
+    "ast_hash": "f703692eef97e7763fff09a5a097ca8b",
     "semantic_hash": ""
   },
   "src/routing.rs": {
