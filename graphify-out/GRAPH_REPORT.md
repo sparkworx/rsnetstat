@@ -1,7 +1,7 @@
 # Graph Report - rsnetstat  (2026-08-15)
 
 ## Corpus Check
-- 6 files · ~4,383 words
+- 6 files · ~4,396 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `dcb6b1c3`
+- Built from commit: `63f4a2bc`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -33,13 +33,13 @@
 1. `RouteEntry` - 15 edges
 2. `rsnetstat` - 8 edges
 3. `message_to_route()` - 7 edges
-4. `JsonRoute` - 6 edges
-5. `main()` - 6 edges
-6. `fmt_addr()` - 6 edges
-7. `route_table()` - 6 edges
-8. `sort_entries()` - 5 edges
-9. `gateway_sort_key()` - 5 edges
-10. `print_section()` - 5 edges
+4. `fmt_addr()` - 6 edges
+5. `JsonRoute` - 6 edges
+6. `route_table()` - 6 edges
+7. `main()` - 6 edges
+8. `print_section()` - 5 edges
+9. `RawRoute` - 5 edges
+10. `sa_to_ip()` - 5 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `JsonRoute` --references--> `DecodedFlag`  [EXTRACTED]
@@ -55,7 +55,7 @@
 
 ### Community 0 - "RouteEntry"
 Cohesion: 0.28
-Nodes (7): Option, fmt_addr(), JsonRoute, print_section(), RouteEntry, String, Vec
+Nodes (7): IpAddr, Option, fmt_addr(), JsonRoute, RouteEntry, String, Vec
 
 ### Community 1 - "rsnetstat"
 Cohesion: 0.23
@@ -70,8 +70,8 @@ Cohesion: 0.33
 Nodes (6): decode(), DecodedFlag, FlagDef, letters(), String, Vec
 
 ### Community 4 - "main.rs"
-Cohesion: 0.16
-Nodes (15): Box, Error, IpAddr, Ipv6Addr, Item, Iterator, Result, Cli (+7 more)
+Cohesion: 0.17
+Nodes (15): Box, Error, Ipv6Addr, Item, Iterator, Result, Cli, col_width() (+7 more)
 
 ## Knowledge Gaps
 - **6 isolated node(s):** `FlagDef`, `rsnetstat`, `net-route crate`, `Route type classification`, `Sort and reverse options` (+1 more)
