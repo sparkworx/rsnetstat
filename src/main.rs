@@ -367,28 +367,20 @@ fn print_section(title: &str, rows: &[RouteEntry]) {
         "{}",
         "-".repeat(dest_w + gw_w + flags_w + "Interface".len() + 6)
     );
-    let mut marked_default = false;
     for (((cidr, gateway), flag_cell), row) in
         cidrs.iter().zip(&gateways).zip(&flag_cells).zip(rows)
     {
-        // Mark the family's primary default route inline; there is exactly one.
-        let note = if row.is_best_default() {
-            marked_default = true;
-            "  <- best default"
-        } else {
-            ""
-        };
+        // Mark the family's primary default route with a trailing `*`; there is
+        // exactly one, and its flags (up, no IFSCOPE) explain why.
+        let marker = if row.is_best_default() { " *" } else { "" };
         println!(
             "{:<dest_w$}  {:<gw_w$}  {:<flags_w$}  {}{}",
             cidr,
             gateway,
             flag_cell,
             row.interface_cell(),
-            note,
+            marker,
         );
-    }
-    if marked_default {
-        println!("(best default: the up, unscoped route the kernel uses for non-scoped traffic)");
     }
 }
 

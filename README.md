@@ -73,7 +73,7 @@ $ rsnetstat
 Internet (IPv4):
 Destination         Gateway         Flags   Interface
 -----------------------------------------------------
-0.0.0.0/0           192.168.1.1     UGScg   en0  <- best default
+0.0.0.0/0           192.168.1.1     UGScg   en0 *
 0.0.0.0/0           192.168.1.1     UGScIg  en0
 10.0.0.0/8          10.0.0.1        UGSc    utun3
 127.0.0.0/8         link#1          UCS     lo0
@@ -82,7 +82,6 @@ Destination         Gateway         Flags   Interface
 192.168.1.42/32     link#11         UHL     en0
 224.0.0.0/4         link#11         UmCS    en0
 255.255.255.255/32  link#11         UHLb    en0
-(best default: the up, unscoped route the kernel uses for non-scoped traffic)
 
 Internet6 (IPv6):
 Destination     Gateway  Flags  Interface
@@ -91,6 +90,9 @@ Destination     Gateway  Flags  Interface
 fe80::%en0/64   link#11  UCI    en0
 ff00::/8        link#1   UmCI   lo0
 ```
+
+A `*` marks each family's best (primary) default route — the up, unscoped `/0`
+(flags with `S`/`g` but no `I`) that the kernel uses for ordinary traffic.
 
 A directly-connected (on-link) route has no next-hop IP; its gateway is shown
 as `link#N`, matching `netstat`.
