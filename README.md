@@ -119,11 +119,11 @@ $ rsnetstat -4 --json
     "flags": "UGScg",
     "flags_bits": 1073809411,
     "flags_decoded": [
-      { "letter": "U", "name": "UP", "description": "route usable" },
-      { "letter": "G", "name": "GATEWAY", "description": "destination is a gateway" },
-      { "letter": "S", "name": "STATIC", "description": "manually added" },
-      { "letter": "c", "name": "PRCLONING", "description": "protocol requires cloning" },
-      { "letter": "g", "name": "GLOBAL", "description": "route to destination of the global internet" }
+      { "flag": "U", "name": "UP", "description": "route usable" },
+      { "flag": "G", "name": "GATEWAY", "description": "destination is a gateway" },
+      { "flag": "S", "name": "STATIC", "description": "manually added" },
+      { "flag": "c", "name": "PRCLONING", "description": "protocol requires cloning" },
+      { "flag": "g", "name": "GLOBAL", "description": "route to destination of the global internet" }
     ],
     "best_default": true
   }
@@ -135,8 +135,8 @@ stable schema. The `type` field classifies each route as one of `default`,
 `unicast host`, `unicast network`, `multicast`, or `broadcast`. Route flags are
 exposed three ways: `flags` is the raw `netstat`-style letter string,
 `flags_bits` is the numeric `rtm_flags` bitmask, and `flags_decoded` names each
-set flag. `best_default` is `true` for the single up, unscoped default route of
-each family.
+set flag. `best_default` is present (and `true`) only on each family's single
+up, unscoped default route; it is omitted from all other routes.
 
 ```sh
 # the interface of each family's best (primary) default route

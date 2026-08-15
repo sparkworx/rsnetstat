@@ -73,16 +73,16 @@ pub fn letters(flags: u32) -> String {
 /// One decoded flag, for the `--json` output.
 #[derive(Serialize)]
 pub struct DecodedFlag {
-    pub letter: char,
+    pub flag: char,
     pub name: &'static str,
     pub description: &'static str,
 }
 
-/// Every set flag, decoded to (letter, name, description) in netstat order.
+/// Every set flag, decoded to (flag, name, description) in netstat order.
 pub fn decode(flags: u32) -> Vec<DecodedFlag> {
     FLAGS
         .iter()
         .filter(|f| flags & f.bit != 0)
-        .map(|f| DecodedFlag { letter: f.letter, name: f.name, description: f.description })
+        .map(|f| DecodedFlag { flag: f.letter, name: f.name, description: f.description })
         .collect()
 }

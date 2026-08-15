@@ -89,10 +89,13 @@ struct JsonRoute {
     flags: String,
     /// The kernel `rtm_flags` bitmask, as a number.
     flags_bits: u32,
-    /// Each set flag decoded to its letter, name, and meaning.
+    /// Each set flag decoded to its flag letter, name, and meaning.
     flags_decoded: Vec<flags::DecodedFlag>,
-    /// True for the single unscoped default route of this family — the one the
-    /// kernel uses for ordinary (non-scoped) traffic.
+    /// Present and `true` only on the single unscoped default route of this
+    /// family — the one the kernel uses for ordinary (non-scoped) traffic.
+    /// Omitted entirely on every other route, since the annotation is
+    /// meaningless there (mirrors the `*` in the text table).
+    #[serde(skip_serializing_if = "std::ops::Not::not")]
     best_default: bool,
 }
 
