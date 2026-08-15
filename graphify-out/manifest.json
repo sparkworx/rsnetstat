@@ -1,7 +1,7 @@
 {
   "src/main.rs": {
-    "mtime": 1786640093.0775568,
-    "ast_hash": "97f81efaaab295945aa97ca9d1a9f177",
+    "mtime": 1786828916.2996314,
+    "ast_hash": "d392fef5ec2ce03ff7ee996974ab2a26",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -10,8 +10,8 @@
     "semantic_hash": "82efb97a359f5c7290bf2513d14686be"
   },
   "README.md": {
-    "mtime": 1786639383.4920197,
-    "ast_hash": "1a4a59a49f35cbb79a2459215a8816ab",
+    "mtime": 1786828937.3931456,
+    "ast_hash": "25ea6a037a2e0145a2f861ce360c3d77",
     "semantic_hash": ""
   },
   ".claude/settings.json": {

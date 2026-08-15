@@ -621,7 +621,7 @@
       "label": "col_width()",
       "file_type": "code",
       "source_file": "src/main.rs",
-      "source_location": "L396",
+      "source_location": "L388",
       "_origin": "ast",
       "id": "src_main_col_width",
       "community": 5,
@@ -1161,7 +1161,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L396",
+      "source_location": "L388",
       "weight": 1.0,
       "context": "generic_arg",
       "_origin": "ast",
@@ -1329,7 +1329,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L396",
+      "source_location": "L388",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -1762,7 +1762,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/main.rs",
-      "source_location": "L396",
+      "source_location": "L388",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_main",
@@ -2160,5 +2160,5 @@
       "source_file": "README.md"
     }
   ],
-  "built_at_commit": "649678466f1085b814e44397cd4f076e879c4591"
+  "built_at_commit": "2fb3dc680d3b03de752dc1dba4aa08cbd7ebfc90"
 }
